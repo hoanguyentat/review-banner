@@ -1,0 +1,52 @@
+<button type="button" class="btn btn-success" (click)='prePage()'>Previous</button>
+<button type="button" class="btn btn-success" (click)='nextPage()'>Next</button>
+Page <input [(ngModel)]="pager" (ngModelChange) = "pagerChange()" > of {{number_of_pages}}
+
+<table class="table table-hover table-striped table-responsive">
+    <thead>
+        <tr>
+            <th>bannerid</th>
+            <th>banname</th>
+            <th>bandesc</th>
+            <th>filename</th>
+            <th>url</th>
+            <th>active</th>
+            <th>expire</th>
+            <th>product_tags</th>
+            <th>person_tag</th>
+            <th>pcat_id</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let banner of banners'>
+            <td>{{ banner.bannerid }}</td>
+            <td>{{ banner.banname }}</td>
+            <td>{{ banner.bandesc }}</td>
+            <td>{{ banner.filename }}</td>
+            <td><a href="{{ banner.url }}">{{ banner.url }}</a></td>
+            <td>{{ banner.active }}</td>
+            <td>{{ banner.expire }}</td>
+            <td>{{ banner.product_tags }}</td>
+            <td>{{ banner.person_tag }}</td>
+            <td>{{ banner.pcat_id }}</td>
+            <td>
+                <a class="btn btn-default" href="" [routerLink]="['/edit', banner.bannerid]" role="button">Edit</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+<style>
+    table {
+    width:100%;
+    table-layout:fixed;
+
+    }
+    td {
+        word-wrap:break-word;
+    }
+</style>
