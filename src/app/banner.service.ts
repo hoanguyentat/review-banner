@@ -24,6 +24,7 @@ export class BannerService {
 
   updateBanner(banner){
     let url = this.host  + "api/banners/do/update";
+    console.log(banner)
     return this.httpClient.post(url, banner);
   }
 }

@@ -1,5 +1,5 @@
-<button type="button" class="btn btn-success" (click)='prePage()'>Previous</button>
-<button type="button" class="btn btn-success" (click)='nextPage()'>Next</button>
+<button type="button" [disabled]="!pager" class="btn btn-success" (click)='prePage()'>Previous</button>
+<button type="button" [disabled]="pager == number_of_pages" class="btn btn-success" (click)='nextPage()'>Next</button>
 Page <input [(ngModel)]="pager" (ngModelChange) = "pagerChange()" > of {{number_of_pages}}
 
 <table class="table table-hover table-striped table-responsive">
