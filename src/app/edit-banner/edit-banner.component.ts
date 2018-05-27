@@ -9,7 +9,6 @@ import { Route, ActivatedRoute } from '@angular/router';
   styleUrls: ['./edit-banner.component.css']
 })
 export class EditBannerComponent implements OnInit {
-
   bannerDetail: any;
 
 
@@ -20,7 +19,6 @@ export class EditBannerComponent implements OnInit {
     this.bannerService.getBannerDetail(bannerId).subscribe(
       data => {
         this.bannerDetail = data;
-        console.log(data)
       },
       error => {
         console.log(error)
@@ -28,8 +26,17 @@ export class EditBannerComponent implements OnInit {
     )
   }
 
-  updateBanner() {
-    
+  updateBanner(banner) {
+    // let url = this.bannerService.host + "api/banners/do/update";
+    console.log(banner);
+    this.bannerService.updateBanner(banner).subscribe(
+      data => {
+        console.log(data);
+      },
+      error => {
+        console.log(error);
+      }
+    )
   }
 
 }

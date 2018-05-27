@@ -32,7 +32,8 @@ export class BannersComponent implements OnInit {
 
 
   nextPage(){
-    this.pager = (<number>this.pager) + 1;
+    this.pager = +this.pager + 1;
+    console.log(typeof(this.pager))
     this.bannerSerivce.getBanners(this.limit, this.pager * this.limit).subscribe(
       data => {
         this.banners = data;

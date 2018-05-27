@@ -23,7 +23,7 @@ export class BannerService {
   }
 
   updateBanner(banner){
-    let url = this.host  + "/api/banners/do/update";
+    let url = this.host  + "api/banners/do/update";
     return this.httpClient.post(url, banner);
   }
 }
