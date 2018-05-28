@@ -4,6 +4,7 @@ import { BannersComponent } from './banners/banners.component';
 import { EditBannerComponent } from './edit-banner/edit-banner.component';
 
 const routes: Routes = [
+  {path: '', redirectTo: '/banners', pathMatch: 'full'},
   {path: 'banners', component: BannersComponent},
   {path: 'edit/:id', component: EditBannerComponent}
 ];
