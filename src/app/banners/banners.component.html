@@ -25,7 +25,7 @@ Page <input [(ngModel)]="pager" (ngModelChange) = "pagerChange()" > of {{number_
             <td>{{ banner.banname }}</td>
             <td>{{ banner.bandesc }}</td>
             <td>{{ banner.filename }}</td>
-            <td><a href="{{ banner.url }}">{{ banner.url }}</a></td>
+            <td><a href="{{ banner.url }}">{{ banner.url.slice(0,25) + "..." }}</a></td>
             <td>{{ banner.active }}</td>
             <td>{{ banner.expire }}</td>
             <td>{{ banner.productTags }}</td>
@@ -45,7 +45,7 @@ Page <input [(ngModel)]="pager" (ngModelChange) = "pagerChange()" > of {{number_
     table-layout:fixed;
 
     }
-    td {
+    td, th {
         word-wrap:break-word;
     }
 </style>
