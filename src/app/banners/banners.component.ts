@@ -25,6 +25,7 @@ export class BannersComponent implements OnInit {
 
     this.bannerSerivce.getBanners(this.limit, this.pager * this.limit).subscribe(
       data => {
+        // console.log(data)
         this.banners = data;
       }
     )
@@ -33,7 +34,6 @@ export class BannersComponent implements OnInit {
 
   nextPage(){
     this.pager = +this.pager + 1;
-    console.log(typeof(this.pager))
     this.bannerSerivce.getBanners(this.limit, this.pager * this.limit).subscribe(
       data => {
         this.banners = data;
@@ -61,7 +61,6 @@ export class BannersComponent implements OnInit {
   }
 
   pagerChange() {
-    console.log(this.pager)
     this.bannerSerivce.getBanners(this.limit, this.limit * this.pager).subscribe(
       data => {
         this.banners = data;

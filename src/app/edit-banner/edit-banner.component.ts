@@ -18,6 +18,7 @@ export class EditBannerComponent implements OnInit {
     let bannerId = this.activatedRoute.snapshot.params["id"];
     this.bannerService.getBannerDetail(bannerId).subscribe(
       data => {
+        // console.log(data)
         this.bannerDetail = data;
       },
       error => {

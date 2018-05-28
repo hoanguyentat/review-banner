@@ -15,11 +15,12 @@ Page <input [(ngModel)]="pager" (ngModelChange) = "pagerChange()" > of {{number_
             <th>product_tags</th>
             <th>person_tag</th>
             <th>pcat_id</th>
+            <th>cpa_status</th>
             <th>Action</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor='let banner of banners'>
+        <tr *ngFor='let banner of banners' [hidden]='banner.cpa_status == 1'>
             <td>{{ banner.bannerid }}</td>
             <td>{{ banner.banname }}</td>
             <td>{{ banner.bandesc }}</td>
@@ -27,9 +28,10 @@ Page <input [(ngModel)]="pager" (ngModelChange) = "pagerChange()" > of {{number_
             <td><a href="{{ banner.url }}">{{ banner.url }}</a></td>
             <td>{{ banner.active }}</td>
             <td>{{ banner.expire }}</td>
-            <td>{{ banner.product_tags }}</td>
-            <td>{{ banner.person_tag }}</td>
-            <td>{{ banner.pcat_id }}</td>
+            <td>{{ banner.productTags }}</td>
+            <td>{{ banner.personTag }}</td>
+            <td>{{ banner.pcatid }}</td>
+            <td>{{ banner.cpaStatus }}</td>
             <td>
                 <a class="btn btn-default" href="" [routerLink]="['/edit', banner.bannerid]" role="button">Edit</a>
             </td>
