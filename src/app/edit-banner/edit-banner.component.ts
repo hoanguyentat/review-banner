@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class EditBannerComponent implements OnInit {
   bannerDetail: any;
-
+  url_image = "http://adi.admicro.vn/adt/adn/";
 
   constructor(private bannerService: BannerService, private httpClient: HttpClient, private activatedRoute: ActivatedRoute, private router: Router) { }
 
@@ -18,7 +18,10 @@ export class EditBannerComponent implements OnInit {
     let bannerId = this.activatedRoute.snapshot.params["id"];
     this.bannerService.getBannerDetail(bannerId).subscribe(
       data => {
-        // console.log(data)
+        console.log(data)
+      let _tmp = (data.createTime.split(" ")[0]).split("-");
+        this.url_image = this.url_image + "/" + _tmp[0] + "/" + _tmp[1] + "/" + data.filename;
+        console.log(this.url_image)
         this.bannerDetail = data;
       },
       error => {

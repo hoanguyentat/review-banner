@@ -4,6 +4,11 @@
       <legend>Chỉnh sửa banner</legend>
     </div>
     <div class="container" *ngIf="bannerDetail">
+      <div class="row"> 
+        <div class="col-sm-12">
+          <img src="{{url_image}}" class="img-responsive img center img-rounded" alt="Image" style="max-height: 500px;">
+        </div>
+      </div>
       <div class="row">
         <div class="col-sm-6">
           <div class="form-group">
@@ -157,3 +162,11 @@
     </div>
 </form>
 
+<style>
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+</style>

@@ -25,7 +25,7 @@ export class BannersComponent implements OnInit {
 
     this.bannerSerivce.getBanners(this.limit, this.pager * this.limit).subscribe(
       data => {
-        // console.log(data)
+        console.log(data)
         this.banners = data;
       }
     )
