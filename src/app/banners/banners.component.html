@@ -12,8 +12,8 @@ Page <input [(ngModel)]="pager" (ngModelChange) = "pagerChange()" > of {{number_
             <th>url</th>
             <th>active</th>
             <th>expire</th>
-            <th>product_tags</th>
-            <th>person_tag</th>
+            <th>landing</th>
+            <th>ext</th>
             <th>pcat_id</th>
             <th>cpa_status</th>
             <th>Action</th>
@@ -28,8 +28,8 @@ Page <input [(ngModel)]="pager" (ngModelChange) = "pagerChange()" > of {{number_
             <td><a href="{{ banner.url }}">{{ banner.url.slice(0,25) + "..." }}</a></td>
             <td>{{ banner.active }}</td>
             <td>{{ banner.expire }}</td>
-            <td>{{ banner.productTags }}</td>
-            <td>{{ banner.personTag }}</td>
+            <td>{{ banner.landingPageContent }}</td>
+            <td>{{ banner.ext }}</td>
             <td>{{ banner.pcatid }}</td>
             <td>{{ banner.cpaStatus }}</td>
             <td>

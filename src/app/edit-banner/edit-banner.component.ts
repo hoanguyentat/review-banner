@@ -19,8 +19,8 @@ export class EditBannerComponent implements OnInit {
     this.bannerService.getBannerDetail(bannerId).subscribe(
       data => {
         console.log(data)
-      let _tmp = (data.createTime.split(" ")[0]).split("-");
-        this.url_image = this.url_image + "/" + _tmp[0] + "/" + _tmp[1] + "/" + data.filename;
+      let _tmp = (data['createTime'].split(" ")[0]).split("-");
+        this.url_image = this.url_image + "/" + _tmp[0] + "/" + _tmp[1] + "/" + data['filename'];
         console.log(this.url_image)
         this.bannerDetail = data;
       },
